@@ -31,10 +31,19 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
           <img src="assets/images/favicon/favicon.png" width="120pt" />
           <h1 class="jumbotron-heading">Mysh&rsquo;t</h1>
           <p class="lead text-muted">Simple Home Inventory System</p>
-		  <p class="text-body-secondary">Create a bunch of QR code <a href="https://www.avery.com/blank/labels/94107">labels</a> using a printer. Slap the labels on the storage bins and shelves. Use your phone to take pictures of your sh&rsquo;t and scan the QR codes of the bins and the shelf. Annotate the pictures in Mysh&rsquo;t. Boom! You know where your sh&rsquo;t is stored!</p>
         </div>
       </section>
-
+      <section>
+        <div class="container">
+          <ol>
+            <li>Create a bunch of QR code <a href="https://www.avery.com/blank/labels/94107">labels</a> using a printer.</li>
+            <li>Slap the labels on the storage bins and shelves.</li>
+            <li>Use your phone to take pictures of your sh&rsquo;t and scan the QR codes of the bins and the shelf.</li>
+            <li>Annotate the pictures in Mysh&rsquo;t.</li>
+            <li>Boom! You know where your sh&rsquo;t is stored!</li>
+          </ol>
+        </div>
+      </section>
     </main>
 
     <footer class="text-muted">
@@ -47,4 +56,4 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-<!-- vim: set ts=2 sw=2 expandtab -->
+<!-- vim:set ts=2 sw=2 expandtab -->

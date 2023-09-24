@@ -33,7 +33,7 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
           <h1 class="jumbotron-heading">Mysh&rsquo;t</h1>
           <p class="lead text-muted">Simple Home Inventory System</p>
           <p>
-            <a href="things/add.php" class="btn btn-primary my-2">Add Things</a>
+            <a href="things/update.php" class="btn btn-primary my-2"  >Add Things</a>
             <a href="things/return.php" class="btn btn-secondary my-2">Return Things</a>
             <form method="post" action="things/search.php">
               <input type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
@@ -58,10 +58,12 @@ if( count( $rows ) > 0 ) { echo( '<h2>Please Return These Things</h2>' ); }
 foreach( $rows as $row ):
   $thing = json_decode( $row[ 'data' ], true );
   $uuid  = $thing[ 'uuid' ] = $row[ 'uuid' ];
+  $image = "/var/www/html/assets/images/things/$uuid.png";
+  $image = file_exists( $image ) ? $image : '/var/www/html/assets/images/no-image-placeholder.png';
 ?>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="assets/images/things/<?= $uuid ?>" alt="<?= $thing[ 'name' ] ?>">
+                <img class="card-img-top" src="<?= $image ?>" alt="<?= $thing[ 'name' ] ?>">
                 <div class="card-body">
                   <p class="card-text"><?= $thing[ 'name' ] ?></p>
                   <div class="d-flex justify-content-between align-items-center">
