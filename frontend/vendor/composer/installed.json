@@ -1,6 +1,56 @@
 {
     "packages": [
         {
+            "name": "axllent/jquery",
+            "version": "3.7.1",
+            "version_normalized": "3.7.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/axllent/jquery.git",
+                "reference": "a7e0f33797bb8c87a2d18666dfd685da23b513e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/axllent/jquery/zipball/a7e0f33797bb8c87a2d18666dfd685da23b513e5",
+                "reference": "a7e0f33797bb8c87a2d18666dfd685da23b513e5",
+                "shasum": ""
+            },
+            "time": "2023-08-29T05:11:36+00:00",
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "support": {
+                "forum": "http://forum.jquery.com",
+                "irc": "irc://irc.freenode.org/jquery",
+                "issues": "https://github.com/jquery/jquery/issues",
+                "source": "https://github.com/jquery/jquery",
+                "wiki": "http://docs.jquery.com/"
+            },
+            "install-path": "../axllent/jquery"
+        },
+        {
             "name": "twbs/bootstrap",
             "version": "v5.1.3",
             "version_normalized": "5.1.3.0",
