@@ -25,7 +25,7 @@
 
     <main role="main">
       <div class="container">
-        <form action="post" method="add.php">
+        <form action="post" method="update.php">
           <center>
             <img id="photo-preview" src="../assets/images/no-image-placeholder.png" alt="image preview" style="height: 200px; margin: 2em 0 1em 0; border-radius: 0.5em;">
             <input class="form-control" type="file" accept="image/*" name="photo" id="photo" style="width: 260px;">

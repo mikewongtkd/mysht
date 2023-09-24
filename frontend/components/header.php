@@ -13,6 +13,7 @@
           <a class="list-group-item list-group-item-action" href="<?= $prefix ?>/things/browse.php" >Things</a>
           <a class="list-group-item list-group-item-action" href="<?= $prefix ?>/places/browse.php" >Places</a>
           <a class="list-group-item list-group-item-action" href="<?= $prefix ?>/things/return.php" >Return</a>
+          <a class="list-group-item list-group-item-action" href="<?= $prefix ?>/tags/update.php"   >Tags</a>
           <a class="list-group-item list-group-item-action" href="<?= $prefix ?>/things/lost.php"   >Lost and Found</a>
           <a class="list-group-item list-group-item-action" href="<?= $prefix ?>/about.php"         >About</a>
         </div>
