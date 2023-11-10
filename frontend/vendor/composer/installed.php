@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a71b250f4b413ac4af8113afa74ce65054088332',
+        'reference' => 'e072b5e0dc9da36736d104fe075c03a349210a0e',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a71b250f4b413ac4af8113afa74ce65054088332',
+            'reference' => 'e072b5e0dc9da36736d104fe075c03a349210a0e',
             'dev_requirement' => false,
         ),
         'axllent/jquery' => array(

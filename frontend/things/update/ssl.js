@@ -67,6 +67,13 @@ async function main() {
       $( '#take-picture' ).show();
 
       const png = canvas.toDataURL( 'image/png' );
+      // Send png data to server to write as a file. It's Base64 encoded. Server should return a UUID
+      let message = { <?php if( ! is_null( $uuid )) { echo( "uuid : '$uuid'," ); } ?> png };
+      console.log( 'MESSAGE: ', message );
+      $.post( 'picture.php', message )
+      .then( response => {
+        console.log( 'RESPONSE: ', response );
+      });
 
       video.play();
     });
