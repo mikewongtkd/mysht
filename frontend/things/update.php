@@ -20,44 +20,26 @@
 
   <body>
 
-<?php include_once( '../dialogs/toast.php' ); ?>
-<?php include_once( '../components/header.php' ); ?>
+<?php 
 
-    <main role="main">
-      <div class="container">
-        <form action="post" method="update.php">
-          <center>
-            <img id="photo-preview" src="../assets/images/no-image-placeholder.png" alt="image preview" style="height: 200px; margin: 2em 0 1em 0; border-radius: 0.5em;">
-            <input class="form-control" type="file" accept="image/*" name="photo" id="photo" style="width: 260px;">
-          </center>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" id="name" aria-describedby="name">
-          </div>
-          <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" name="description" id="description"></textarea>
-          </div>
-          <button type="button" class="btn btn-secondary">Add Location</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </main>
+include_once( '../components/header.php' ); 
+include_once( '../config.php' );
+global $config;
 
-  <script>
-    function preview( input, img ) {
-        if( ! input.files || ! input.files[ 0 ]) { return; }
-        let reader = new FileReader();
-        reader.onload = e => {
-          $( img ).attr( 'src', e.target.result );
-        };
+if( $config[ 'protocol' ] == 'http://' ) {
+	include_once( 'update/firewall.php' );
 
-        reader.readAsDataURL( input.files[ 0 ]);
-    }
+} elseif( $config[ 'protocol' ] == 'https://' ) {
+	include_once( 'update/ssl.php' );
+	echo( "<script>" );
+	include_once( 'update/ssl.js' );
+	echo( "</script>" );
 
-    $( '#photo' ).change( ev => { let image = $( ev.target )[ 0 ]; preview( image, '#photo-preview' ); });
-    $( '#location' ).change( ev => { let image = $( ev.target )[ 0 ]; preview( image, '#location-preview' ); });
-  </script>
+} else {
+	echo( "Unknown protocol {$config[ 'protocol' ]}" );
+}
+
+?>
 
   </body>
 </html>

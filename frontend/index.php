@@ -12,13 +12,17 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
     <meta name="author" content="">
     <link rel="icon" href="assets/images/favicon/favicon.ico">
 
-    <title>Mysh&rsquo;t - A Simple Home Inventory System</title>
+    <title>Mysh!t - A Simple Home Inventory System</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/css/album.css" rel="stylesheet">
+
+    <!-- CSS for Photo capture -->
+    <link href="update/ssl.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -88,7 +92,7 @@ foreach( $rows as $row ):
 
     <footer class="text-muted">
       <div class="container">
-        <p><a href="https://github.com/mikewongtkd/mysht">Mysh't</a> is <a href="https://opensource.org/">Open Source software</a> available under the <a href="https://opensource.org/license/mit/">MIT license</a>.</p>
+        <p><a href="https://github.com/mikewongtkd/mysht">Mysh!t</a> is <a href="https://opensource.org/">Open Source software</a> available under the <a href="https://opensource.org/license/mit/">MIT license</a>.</p>
       </div>
     </footer>
 

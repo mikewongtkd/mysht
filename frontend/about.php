@@ -12,7 +12,7 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
     <meta name="author" content="">
     <link rel="icon" href="assets/images/favicon/favicon.ico">
 
-    <title>Mysh&rsquo;t - A Simple Home Inventory System</title>
+    <title>Mysh!t - A Simple Home Inventory System</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
       <section class="jumbotron text-center">
         <div class="container">
           <img src="assets/images/favicon/favicon.png" width="120pt" />
-          <h1 class="jumbotron-heading">Mysh&rsquo;t</h1>
+          <h1 class="jumbotron-heading">Mysh!t</h1>
           <p class="lead text-muted">Simple Home Inventory System</p>
         </div>
       </section>
@@ -38,9 +38,9 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
           <ol>
             <li>Create a bunch of QR code <a href="https://www.avery.com/blank/labels/94107">labels</a> using a printer.</li>
             <li>Slap the labels on the storage bins and shelves.</li>
-            <li>Use your phone to take pictures of your sh&rsquo;t and scan the QR codes of the bins and the shelf.</li>
-            <li>Annotate the pictures in Mysh&rsquo;t.</li>
-            <li>Boom! You know where your sh&rsquo;t is stored!</li>
+            <li>Use your phone to take pictures of your sh!t and scan the QR codes of the bins and the shelf.</li>
+            <li>Annotate the pictures in Mysh!t.</li>
+            <li>Boom! You know where your sh!t is stored!</li>
           </ol>
         </div>
       </section>
@@ -48,7 +48,7 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
 
     <footer class="text-muted">
       <div class="container">
-        <p><a href="https://github.com/mikewongtkd/mysht">Mysh't</a> is <a href="https://opensource.org/">Open Source software</a> available under the <a href="https://opensource.org/license/mit/">MIT license</a>.</p>
+        <p><a href="https://github.com/mikewongtkd/mysht">Mysh!t</a> is <a href="https://opensource.org/">Open Source software</a> available under the <a href="https://opensource.org/license/mit/">MIT license</a>.</p>
       </div>
     </footer>
 
