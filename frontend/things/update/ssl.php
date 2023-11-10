@@ -1,12 +1,9 @@
     <main role="main">
-      <div class="container">
-        <div class="camera">
-          <video id="video">Video stream not available.</video>
-          <button id="startbutton">Take photo</button>
-        </div>
-        <canvas id="canvas"> </canvas>
-        <div class="output">
-          <img id="photo" alt="The screen capture will appear in this box." />
-        </div>
+      <canvas id="canvas"></canvas>
+      <video autoplay muted hidden playsinline id="video"></video>
+      <button class="btn btn-primary form-control" id="take-picture"><span class="fa-solid fa-camera"></button>
+      <div id="confirm-dialog">
+        <button class="btn btn-primary form-control" id="take-picture"><span class="fa-solid fa-camera"></button>
+        <button class="btn btn-primary form-control" id="take-picture"><span class="fa-solid fa-camera"></button>
       </div>
     </main>

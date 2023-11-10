@@ -18,9 +18,6 @@ $ssl = $config[ 'protocol' ] == 'https://';
     <!-- Bootstrap core CSS -->
     <link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- FontAwesome CSS -->
-    <link href="../../vendor/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="../assets/css/album.css" rel="stylesheet">
 
