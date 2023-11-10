@@ -28,7 +28,7 @@ async function setupCamera() {
 }
 
 function drawWebcamContinuous(){
-    ctx.drawImage(video,0,0);
+    ctx.drawImage(video,-1,0);
     requestAnimationFrame(drawWebcamContinuous);
 }
 
@@ -49,19 +49,26 @@ async function main() {
     // Start continuous drawing function
     drawWebcamContinuous();
 
+    // BUTTON BEHAVIOR
     $( '#take-picture' ).click( ev => {
       $( '#take-picture' ).hide();
       $( '#confirm-dialog' ).show();
+      video.pause();
     });
 
     $( '#picture-cancel' ).click( ev => {
       $( '#confirm-dialog' ).hide();
       $( '#take-picture' ).show();
+      video.play();
     });
 
     $( '#picture-ok' ).click( ev => {
       $( '#confirm-dialog' ).hide();
       $( '#take-picture' ).show();
+
+      const png = canvas.toDataURL( 'image/png' );
+
+      video.play();
     });
 }
 
