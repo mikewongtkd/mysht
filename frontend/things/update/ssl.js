@@ -49,7 +49,20 @@ async function main() {
     // Start continuous drawing function
     drawWebcamContinuous();
 
-    console.log("Camera setup done")
+    $( '#take-picture' ).click( ev => {
+      $( '#take-picture' ).hide();
+      $( '#confirm-dialog' ).show();
+    });
+
+    $( '#picture-cancel' ).click( ev => {
+      $( '#confirm-dialog' ).hide();
+      $( '#take-picture' ).show();
+    });
+
+    $( '#picture-ok' ).click( ev => {
+      $( '#confirm-dialog' ).hide();
+      $( '#take-picture' ).show();
+    });
 }
 
 // Delay the camera request by a bit, until the main body has loaded

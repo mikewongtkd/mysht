@@ -16,21 +16,21 @@ $ssl = $config[ 'protocol' ] == 'https://';
     <title>Mysh&rsquo;t - A Simple Home Inventory System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FontAwesome CSS -->
     <link href="../../vendor/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/album.css" rel="stylesheet">
+    <link href="../../assets/css/album.css" rel="stylesheet">
 
 <?php if( $ssl ): ?>
     <!-- Custom styles for video capture -->
     <link href="update/ssl.css" rel="stylesheet">
 <?php endif; ?>
 
-    <script src="../vendor/axllent/jquery/jquery.slim.min.js"></script>
-    <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/axllent/jquery/jquery.slim.min.js"></script>
+    <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>

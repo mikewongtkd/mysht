@@ -14,5 +14,14 @@
 }
 
 #confirm-dialog {
-  display: hidden;
+  display: none;
+}
+
+#picture-cancel, #picture-ok {
+  position: relative;
+  top: 16px;
+  margin-left: 20px;
+  width: 130px;
+  height: 48px;
+  font-size: 1.25em;
 }
