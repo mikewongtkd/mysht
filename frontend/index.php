@@ -34,7 +34,7 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
       <section class="jumbotron text-center">
         <div class="container">
           <img src="assets/images/favicon/favicon.png" width="120pt" />
-          <h1 class="jumbotron-heading">Mysh&rsquo;t</h1>
+          <h1 class="jumbotron-heading">Mysh!t</h1>
           <p class="lead text-muted">Simple Home Inventory System</p>
           <p>
             <a href="things/update.php" class="btn btn-primary my-2"  >Add Things</a>
