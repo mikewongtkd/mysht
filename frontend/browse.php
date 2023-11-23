@@ -15,15 +15,15 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
     <title>Mysh!t - A Simple Home Inventory System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/album.css" rel="stylesheet">
+    <link href="assets/css/album.css" rel="stylesheet">
   </head>
 
   <body>
 
-<?php include_once( '../components/header.php' ); ?>
+<?php include_once( 'components/header.php' ); ?>
 
     <main role="main">
       <div class="album py-5 bg-light">
@@ -35,13 +35,13 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
           <div class="row">
 <?php
 
-$results = $db->query( "select uuid, data from document where class='thing' and json_extract( data, '$.status.label' ) = 'available' order by json_extract( data, '$.added.timestamp' ) asc" );
+$results = $db->query( "select uuid, data, json_extract( data, '$.timestamp.created' ) as created, from document where class='thing' or class='place' order by created asc" );
 $rows    = [];
 while( $row = $results->fetchArray()) {
   $rows []= $row;
 }
 
-if( count( $rows ) > 0 ) { echo( '<h1>Things</h1>' ); }
+if( count( $rows ) > 0 ) { echo( '<h1>Your Sh!t</h1>' ); }
 
 foreach( $rows as $row ):
   $thing = json_decode( $row[ 'data' ], true );

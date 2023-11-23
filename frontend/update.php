@@ -1,5 +1,5 @@
 <?php
-include_once( '../config.php' );
+include_once( 'config.php' );
 global $config;
 
 $ssl  = $config[ 'protocol' ] == 'https://';
@@ -12,33 +12,33 @@ $uuid = isset( $_GET[ 'uuid' ]) ? $_GET[ 'uuid' ] : NULL;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="icon" href="assets/images/favicon/favicon.ico">
 
     <title>Mysh&rsquo;t - A Simple Home Inventory System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FontAwesome CSS -->
-    <link href="../../vendor/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../assets/css/album.css" rel="stylesheet">
+    <link href="assets/css/album.css" rel="stylesheet">
 
 <?php if( $ssl ): ?>
     <!-- Custom styles for video capture -->
     <link href="update/ssl.css" rel="stylesheet">
 <?php endif; ?>
 
-    <script src="../../vendor/axllent/jquery/jquery.min.js"></script>
-    <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/axllent/jquery/jquery.min.js"></script>
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
 
 <?php 
 
-include_once( '../components/header.php' ); 
+include_once( 'components/header.php' ); 
 
 if( $ssl ) {
   include_once( 'update/ssl.php' );

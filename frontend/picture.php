@@ -1,7 +1,7 @@
 <?php
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . "/vendor/autoload.php";
 use Zxing\QrReader;
-include_once( '../lib/uuid.php' );
+include_once( 'lib/uuid.php' );
 
 if( ! isset( $_POST[ 'png' ])) {
   echo( "{\"error\":\"No PNG data received\"}\n" );
@@ -15,7 +15,6 @@ function save_png_and_exit( $png ) {
 # ============================================================
   $uuid = isset( $_POST[ 'uuid' ]) ? $_POST[ 'uuid' ] : null;
   if( is_null( $uuid )) { $uuid = MyshtUUID::new(); }
-  error_log( "UUID: $uuid\n" ); # MW
   $file   = "images/$uuid.png";
   $png    = preg_replace( '/^data\:image\/png;base64,/', '', $png );
   $data   = base64_decode( $png );
