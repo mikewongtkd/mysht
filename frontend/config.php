@@ -14,4 +14,15 @@ function read_config() {
 	return $config;
 }
 
+# ============================================================
+function config_host( $config ) {
+# ============================================================
+	$protocol = isset( $config[ 'protocol' ]) ? $config[ 'protocol' ] : 'http://';
+	$host     = isset( $config[ 'host' ]) ? $config[ 'host' ] : 'localhost';
+	$port     = isset( $config[ 'port' ]) ? $config[ 'port' ] : 80;
+	$port     = $port == 80 ? '' : ":{$port}";
+
+	return "$protocol$host$port";
+}
+
 ?>

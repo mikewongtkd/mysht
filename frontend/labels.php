@@ -1,4 +1,5 @@
 <?php
+include_once( 'label.php' );
 
 $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
 
