@@ -1,4 +1,3 @@
-    <main role="main">
       <div class="container">
         <form>
           <center>
@@ -17,19 +16,17 @@
           <button type="button" class="btn btn-primary btn-submit">Submit</button>
         </form>
       </div>
-    </main>
+      <script>
+        function preview( input, img ) {
+            if( ! input.files || ! input.files[ 0 ]) { return; }
+            let reader = new FileReader();
+            reader.onload = e => {
+              $( img ).attr( 'src', e.target.result );
+            };
 
-  <script>
-    function preview( input, img ) {
-        if( ! input.files || ! input.files[ 0 ]) { return; }
-        let reader = new FileReader();
-        reader.onload = e => {
-          $( img ).attr( 'src', e.target.result );
-        };
+            reader.readAsDataURL( input.files[ 0 ]);
+        }
 
-        reader.readAsDataURL( input.files[ 0 ]);
-    }
-
-    $( '#photo' ).change( ev => { let image = $( ev.target )[ 0 ]; preview( image, '#photo-preview' ); });
-    $( '#location' ).change( ev => { let image = $( ev.target )[ 0 ]; preview( image, '#location-preview' ); });
-  </script>
+        $( '#photo' ).change( ev => { let image = $( ev.target )[ 0 ]; preview( image, '#photo-preview' ); });
+        $( '#location' ).change( ev => { let image = $( ev.target )[ 0 ]; preview( image, '#location-preview' ); });
+      </script>
