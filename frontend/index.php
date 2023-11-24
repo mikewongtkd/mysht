@@ -100,4 +100,4 @@ foreach( $rows as $row ):
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-<!-- vim: set ts=2 sw=2 expandtab -->
+<!-- vim: set ts=2 sw=2 expandtab nowrap: -->

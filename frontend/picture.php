@@ -45,4 +45,4 @@ function save_png_and_exit( $png ) {
 
 ?>
 
-<!-- vim: set ts=2 sw=2 expandtab -->
+<!-- vim: set ts=2 sw=2 expandtab nowrap: -->

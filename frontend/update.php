@@ -24,6 +24,7 @@ $uuid = isset( $_GET[ 'uuid' ]) ? $_GET[ 'uuid' ] : NULL;
 
     <!-- Custom styles for this template -->
     <link href="assets/css/album.css" rel="stylesheet">
+    <link href="update/update.css" rel="stylesheet">
 
 <?php if( $ssl ): ?>
     <!-- Custom styles for video capture -->
@@ -64,11 +65,18 @@ if( $ssl ) {
           </div> 
           <div class="mb-3"> 
             <label for="quantity">Quantity</label> 
-            <input type="number" class="form-control" id="quantity"></input> 
+            <input type="number" class="form-control" id="quantity" placeholder="1"></input> 
           </div> 
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-4 col-left"><button class="btn btn-primary" id="btn-cancel"><span class="fa-solid fa-circle-xmark"></span> Cancel</button></div>
+              <div class="col-4 col-middle"><button class="btn btn-danger" id="btn-remove"><span class="fa-solid fa-trash"></span> Remove</button></div>
+              <div class="col-4 col-right"><button class="btn btn-success" id="btn-update"><span class="fa-solid fa-circle-check"></span> Update</button></div>
+            </div>
+          </div>
         </form> 
       </div>
     </main>
   </body>
 </html>
-<!-- vim: set ts=2 sw=2 expandtab -->
+<!-- vim: set ts=2 sw=2 expandtab nowrap: -->

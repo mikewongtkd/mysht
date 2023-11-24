@@ -19,31 +19,34 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
 
     <!-- Custom styles for this template -->
     <link href="assets/css/album.css" rel="stylesheet">
+
+    <!-- CSS for Photo capture -->
+    <link href="update/ssl.css" rel="stylesheet">
+
   </head>
 
   <body>
+
 <?php include_once( 'components/header.php' ); ?>
 
     <main role="main">
+<?php 
+  for( $x = 0; $x < 3; $x++ ):
+?>
+      <div class="row">
+<?php
+    for( $y = 0; $y < 4; $y++ ):
+?>
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <img src="assets/images/favicon/favicon.png" width="120pt" />
-          <h1 class="jumbotron-heading">Mysh!t</h1>
-          <p class="lead text-muted">Simple Home Inventory System</p>
-        </div>
-      </section>
-      <section>
-        <div class="container">
-          <ol>
-            <li>Create a bunch of QR code <a href="https://www.avery.com/blank/labels/94107">labels</a> using a printer.</li>
-            <li>Slap the labels on the storage bins and shelves.</li>
-            <li>Use your phone to take pictures of your sh!t and scan the QR codes of the bins and the shelf.</li>
-            <li>Annotate the pictures in Mysh!t.</li>
-            <li>Boom! You know where your sh!t is stored!</li>
-          </ol>
-        </div>
-      </section>
+<?php
+endfor;
+?>
+      </div>
+<?php
+endfor;
+?>
+
+
     </main>
 
     <footer class="text-muted">
@@ -56,4 +59,4 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-<!-- vim:set ts=2 sw=2 expandtab nowrap: -->
+<!-- vim: set ts=2 sw=2 expandtab nowrap: -->
