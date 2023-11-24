@@ -36,10 +36,10 @@ $uuid = isset( $_GET[ 'uuid' ]) ? $_GET[ 'uuid' ] : NULL;
 
   <body>
 
-<?php 
+<?php include_once( 'components/header.php' ); ?>
 
-include_once( 'components/header.php' ); 
-
+    <main role="main">
+<?php
 if( $ssl ) {
   include_once( 'update/ssl.php' );
   echo( "<script>" );
@@ -51,7 +51,24 @@ if( $ssl ) {
 }
 
 ?>
-
+      <div class="interface" id="update-information-interface"> 
+        <img id="picture"></img> 
+        <form action="view.php" method="post"> 
+          <div class="mb-3"> 
+            <label for="name">Name</label> 
+            <input type="text" class="form-control" id="name"></input> 
+          </div> 
+          <div class="mb-3"> 
+            <label for="description">Description</label> 
+            <textarea class="form-control" id="description" rows="3"></textarea> 
+          </div> 
+          <div class="mb-3"> 
+            <label for="quantity">Quantity</label> 
+            <input type="number" class="form-control" id="quantity"></input> 
+          </div> 
+        </form> 
+      </div>
+    </main>
   </body>
 </html>
 <!-- vim: set ts=2 sw=2 expandtab -->
