@@ -1,7 +1,14 @@
 <?php
-include_once( 'label.php' );
+include_once( 'lib/uuid.php' );
 
 $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
+
+function abbreviate_uuid( $uuid ) {
+  $first4 = substr( $uuid, 0, 4 );
+  $last4  = substr( $uuid, -4, 4 );
+
+  return "{$first4}...{$last4}";
+}
 
 ?>
 <!doctype html>
@@ -27,27 +34,36 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
   </head>
 
   <body>
+    <style>
+      .label { text-align: center; }
+      @media print {
+        .label { margin-top: 0.2825in; margin-bottom: 0.2825in; }
+      }
+    </style>
 
 <?php include_once( 'components/header.php' ); ?>
 
     <main role="main">
 <?php 
-  for( $x = 0; $x < 3; $x++ ):
+  for( $y = 0; $y < 4; $y++ ):
 ?>
       <div class="row">
 <?php
-    for( $y = 0; $y < 4; $y++ ):
+    for( $x = 0; $x < 3; $x++ ):
+    $uuid  = MyshtUUID::new();
 ?>
-
+<div class="col-4 label">
+  <img src="label.php?uuid=<?= $uuid ?>"><br>
+  <?= abbreviate_uuid( $uuid ) ?>
+</div>
 <?php
 endfor;
 ?>
       </div>
 <?php
 endfor;
+
 ?>
-
-
     </main>
 
     <footer class="text-muted">

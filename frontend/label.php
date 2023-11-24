@@ -5,7 +5,6 @@ use chillerlan\QRCode\{QRCode, QROptions};
 use chillerlan\QRCode\Common\EccLevel;
 use chillerlan\QRCode\Data\QRMatrix;
 use chillerlan\QRCode\Output\{QRGdImagePNG, QRCodeOutputException};
-include_once( 'lib/uuid.php' );
 include_once( 'config.php' );
 
 /*
@@ -64,12 +63,11 @@ class QRImageWithLogo extends QRGdImagePNG{
 }
 
 # ============================================================
-function make_label( $uuid = null ) {
+function make_label( $uuid ) {
 # ============================================================
   global $config;
-  if( is_null( $uuid )) {
-    $uuid = MyshtUUID::new();
-  }
+
+  # $file = "/var/www/html/data/labels/{$uuid}.png";
   
   /*
    * Runtime
@@ -77,9 +75,8 @@ function make_label( $uuid = null ) {
 
   $options = new QROptions;
 
-  $options->version             = 5;
   $options->outputBase64        = false;
-  $options->scale               = 6;
+  $options->scale               = 3;
   $options->imageTransparent    = false;
   $options->drawCircularModules = true;
   $options->circleRadius        = 0.45;
@@ -90,8 +87,8 @@ function make_label( $uuid = null ) {
   // ecc level H is required for logo space
   $options->eccLevel            = EccLevel::H;
   $options->addLogoSpace        = true;
-  $options->logoSpaceWidth      = 13;
-  $options->logoSpaceHeight     = 13;
+  $options->logoSpaceWidth      = 19;
+  $options->logoSpaceHeight     = 19;
 
 
   $qrcode = new QRCode( $options );
@@ -100,8 +97,12 @@ function make_label( $uuid = null ) {
   $qrOutputInterface = new QRImageWithLogo( $options, $qrcode->getQRMatrix());
 
   // dump the output, with an additional logo
-  // the logo could also be supplied via the options, see the svgWithLogo example
-  $out = $qrOutputInterface->dump( null, __DIR__.'/assets/images/favicon/favicon.png' );
-  return $out;
+  # $qrOutputInterface->dump( $file, __DIR__.'/assets/images/favicon/favicon.png' );
+  $label = $qrOutputInterface->dump( null, __DIR__.'/assets/images/favicon/favicon.png' );
+
+  header( 'Content-type: image/png' );
+  echo $label;
 }
+
+make_label( $_GET[ 'uuid' ]);
 ?>
