@@ -1,0 +1,26 @@
+#canvas {
+  width: 320px;
+  height: 320px;
+}
+
+#take-picture {
+  position: relative;
+  top: 16px;
+  left: 112px;
+  width: 96px;
+  height: 48px;
+  font-size: 1.75em;
+}
+
+#confirm-dialog {
+  display: none;
+}
+
+#picture-cancel, #picture-ok {
+  position: relative;
+  top: 16px;
+  margin-left: 20px;
+  width: 130px;
+  height: 48px;
+  font-size: 1.25em;
+}
