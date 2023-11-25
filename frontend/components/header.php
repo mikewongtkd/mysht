@@ -5,6 +5,7 @@
           <a class="list-group-item list-group-item-action" href="return.php"            >Return</a>
           <a class="list-group-item list-group-item-action" href="index.php?browse=tags" >Tags</a>
           <a class="list-group-item list-group-item-action" href="index.php?browse=lost" >Lost and Found</a>
+          <a class="list-group-item list-group-item-action" href="labels.php"            >Labels</a>
           <a class="list-group-item list-group-item-action" href="about.php"             >About</a>
         </div>
       </div>
