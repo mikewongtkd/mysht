@@ -13,11 +13,11 @@ create table document (
 create table document_group (
 	a text not null,
 	b text not null,
-	description text not null,
+	class text not null,
 	deleted text default null,
 	created text default current_timestamp,
 	modified text default current_timestamp,
-	seen text default current_timestamp
+	seen text default current_timestamp,
 	primary key (a, b)
 );
 

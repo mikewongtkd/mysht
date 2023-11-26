@@ -94,10 +94,9 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
                     <label for="end-date">End Date</label>
                     <input class="form-control" type="date" name="end-date"></input>
                   </div>
-                  <div class="mb-3">
-                  </div>
                 </div>
               </div>
+              <input class="form-control" type="hidden" name="last-seen"></input>
             </form>
           </p>
         </div>
