@@ -27,7 +27,8 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
     <link href="update/ssl.css" rel="stylesheet">
 
     <style>
-      #advanced-search { margin-top: 2em; text-align: left; }
+      #advanced-search, #btn-advanced-search { margin-top: 1.5em; }
+      #advanced-search { text-align: left; }
       .btn-class {
         width: calc( 50% - 22.5px );
         margin-left: 20px;
@@ -51,15 +52,15 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
             <a href="return.php" class="btn btn-secondary my-2">Return Things</a>
             <form>
               <div class="row">
-                <div class="col-8">
+                <div class="col-10">
                   <input type="search" class="form-control ds-input" name="search" id="search" placeholder="Search..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0">
                 </div>
-                <div class="col-1">
+                <div class="col-2 d-grid">
                   <button class="btn btn-success" id="btn-search"><span class="fa-solid fa-magnifying-glass"></span></button>
                 </div>
-                <div class="col-3 d-grid">
-                  <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#advanced-search" id="btn-advanced-search">Advanced</button>
-                </div>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#advanced-search" id="btn-advanced-search">Advanced Search</button>
               </div>
               <div class="collapse" id="advanced-search">
                 <div class="card card-body">
@@ -77,25 +78,21 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
                     </div>
                   </div>
                   <div class="mb-3">
-                    <div class="row">
-                      <div class="col-4">
-                        <label for="date">Search over Date Range</label>
-                        <select class="form-control" name="date">
-                          <option value="none">Select one...</option>
-                          <option value="created">Created</option>
-                          <option value="modified">Modified</option>
-                          <option value="seen">Last Seen</option>
-                        </select>
-                      </div>
-                      <div class="col-4">
-                        <label for="start-date">Start Date</label>
-                        <input class="form-control" type="date" name="start-date"></input>
-                      </div>
-                      <div class="col-4">
-                        <label for="end-date">End Date</label>
-                        <input class="form-control" type="date" name="end-date"></input>
-                      </div>
-                    </div>
+                    <label for="date">Search over Date Range</label>
+                    <select class="form-control" name="date">
+                      <option value="none">Select one...</option>
+                      <option value="created">Created</option>
+                      <option value="modified">Modified</option>
+                      <option value="seen">Last Seen</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="start-date">Start Date</label>
+                    <input class="form-control" type="date" name="start-date"></input>
+                  </div>
+                  <div class="mb-3">
+                    <label for="end-date">End Date</label>
+                    <input class="form-control" type="date" name="end-date"></input>
                   </div>
                   <div class="mb-3">
                   </div>
