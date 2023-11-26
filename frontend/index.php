@@ -154,13 +154,23 @@ foreach( $rows as $row ):
 
     <script src="vendor/axllent/jquery/jquery.min.js"></script>
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="opt/jsBs5Utils.js"></script>
     <script>
+      const Bs5Utils = new Bs5Utils();
+
+      // ===== TOGGLE BUTTON BEHAVIOR (INCLUDING CLASS)
       $( '.btn-toggle' ).click( ev => {
         ev.preventDefault();
         let target = $( ev.target );
         if( target.parent().hasClass( 'btn-toggle' )) { target = target.parent(); }
 
         if( target.hasClass( 'active' )) {
+          if( target.hasClass( 'btn-class' )) {
+            if( $( '.btn-class' ).filter(( i, el ) => $( el ).val() == true ).length == 0 ) {
+              bs5Utils.Snack.show( 'warning', 'At least one class must be active' );
+              return;
+            }
+          }
           target.addClass( 'btn-secondary' );
           target.removeClass( 'btn-primary' );
           target.removeClass( 'active' );
@@ -171,7 +181,25 @@ foreach( $rows as $row ):
           target.removeClass( 'btn-secondary' );
         }
       });
+
+      // ===== ADVANCED SEARCH BUTTON BEHAVIOR
       $( '#btn-advanced-search' ).click( ev => { ev.preventDefault(); });
+
+      // ===== DATE BEHAVIOR
+      $( '#start-date, #end-date' ).change( ev => {
+        let val = {};
+        [ 'start', 'end' ].forEach( key => {
+          let el = $( `#${key}-date` );
+          if( ! el.val()) { return; }
+          val[ key ] = el.val();
+        });
+        if( val.start && val.end && val.start > val.end ) {
+          console.log( ev );
+          Bs5Utils.Snack.show( 'warning', 'Start date cannot exceed end date' );
+        }
+      });
+
+      // ===== SEARCH BUTTON BEHAVIOR
       $( '#btn-search' ).click( ev => { 
         ev.preventDefault(); 
         let message = {};
