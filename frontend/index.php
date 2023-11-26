@@ -88,11 +88,11 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
                   </div>
                   <div class="mb-3">
                     <label for="start-date">Start Date</label>
-                    <input class="form-control" type="date" name="start-date"></input>
+                    <input class="form-control" type="date" name="start-date" id="start-date"></input>
                   </div>
                   <div class="mb-3">
                     <label for="end-date">End Date</label>
-                    <input class="form-control" type="date" name="end-date"></input>
+                    <input class="form-control" type="date" name="end-date" id="end-date"></input>
                   </div>
                 </div>
               </div>
@@ -154,9 +154,9 @@ foreach( $rows as $row ):
 
     <script src="vendor/axllent/jquery/jquery.min.js"></script>
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="opt/jsBs5Utils.js"></script>
+    <script src="opt/js/Bs5Utils.js"></script>
     <script>
-      const Bs5Utils = new Bs5Utils();
+      const bs5utils = new Bs5Utils();
 
       // ===== TOGGLE BUTTON BEHAVIOR (INCLUDING CLASS)
       $( '.btn-toggle' ).click( ev => {
@@ -166,8 +166,8 @@ foreach( $rows as $row ):
 
         if( target.hasClass( 'active' )) {
           if( target.hasClass( 'btn-class' )) {
-            if( $( '.btn-class' ).filter(( i, el ) => $( el ).val() == true ).length == 0 ) {
-              bs5Utils.Snack.show( 'warning', 'At least one class must be active' );
+            if( $( '.btn-class' ).filter(( i, el ) => $( el ).hasClass( 'active' )).length == 1 ) {
+              bs5utils.Snack.show( 'warning', 'At least one class must be active', 6000 );
               return;
             }
           }
@@ -187,6 +187,7 @@ foreach( $rows as $row ):
 
       // ===== DATE BEHAVIOR
       $( '#start-date, #end-date' ).change( ev => {
+        console.log( ev ); // MW
         let val = {};
         [ 'start', 'end' ].forEach( key => {
           let el = $( `#${key}-date` );
@@ -194,8 +195,8 @@ foreach( $rows as $row ):
           val[ key ] = el.val();
         });
         if( val.start && val.end && val.start > val.end ) {
-          console.log( ev );
-          Bs5Utils.Snack.show( 'warning', 'Start date cannot exceed end date' );
+          $( ev.target ).val( '' );
+          bs5utils.Snack.show( 'warning', 'Start date cannot exceed end date', 6000 );
         }
       });
 
