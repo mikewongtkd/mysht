@@ -24,3 +24,15 @@ create table document_group (
 drop index if exists document_class;
 
 create index document_class on document (class);
+
+drop index if exists document_group_class;
+
+create index document_group_class on document_group (class);
+
+drop index if exists document_group_a;
+
+create index document_group_a on document_group (a);
+
+drop index if exists document_group_b;
+
+create index document_group_b on document_group (b);

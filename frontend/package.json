@@ -1,6 +1,15 @@
 {
+  "name" : "mysht",
+  "version" : "1.0.0",
+  "scripts" : {
+	  "build" : "babel assets/jsx -d assets/js"
+  },
   "dependencies": {
     "js-qrcode": "^1.0.0",
     "sweetalert2": "^11.7.28"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.3"
   }
 }

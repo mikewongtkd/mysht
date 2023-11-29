@@ -103,8 +103,8 @@ $db = new SQLite3( '/usr/local/mysht/db.sqlite' );
       </section>
 
       <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
+        <div class="container" id="browser">
+          <div id="browser-card-template">
 <?php
 
 $results = $db->query( "select uuid, data from document where class='thing' and json_extract( data, '$.status.label' ) = 'taken' order by json_extract( data, '$.status.timestamp' ) asc" );
