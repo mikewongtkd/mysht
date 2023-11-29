@@ -154,6 +154,7 @@ foreach( $rows as $row ):
 
     <script src="vendor/axllent/jquery/jquery.min.js"></script>
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/no-react.js"></script>
     <script src="opt/js/Bs5Utils.js"></script>
     <script>
       const bs5utils = new Bs5Utils();
